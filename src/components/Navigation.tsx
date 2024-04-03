@@ -11,6 +11,7 @@ const Navigation = () => {
       block: "start",
       inline: "nearest",
     });
+    setClick(!click);
   };
 
   return (
