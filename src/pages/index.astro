@@ -1,9 +1,23 @@
 ---
 import Layout from "../layouts/Layout.astro";
 // import Card from "../components/Card.astro";
-import Navigation from "../components/Navigation";
+import {
+  Navigation,
+  Home,
+  About,
+  Portfolio,
+  Team,
+  Testimonials,
+  Contact,
+} from "../components/components";
 ---
 
 <Layout title="Welcome to softLauncher.">
   <Navigation client:load />
+  <Home />
+  <About />
+  <Portfolio />
+  <Team />
+  <Testimonials />
+  <Contact />
 </Layout>
