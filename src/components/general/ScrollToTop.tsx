@@ -1,5 +1,6 @@
 import * as React from "react";
 import { FaArrowUp } from "react-icons/fa";
+import { cn } from "../../utilities/cn";
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = React.useState(false);
@@ -25,20 +26,19 @@ const ScrollToTop = () => {
       }
     };
     window.addEventListener("scroll", toggleVisibility);
-
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, [isVisible]);
-
-  // {`${
-  //   isVisible
-  //     ? "opacity-100 cursor-pointer w-12 h-12 bg-red-600 text-white text-3xl fixed right-0 bottom-0 transition-opacity duration-500 flex justify-center items-center"
-  //     : ""
-  // }`}
 
   return (
     <div
       onClick={scrollTop}
-      className={` ${isVisible ? "opacity-100 cursor-pointer" : ""}`}
+      className={cn(
+        "cursor-pointer w-12 h-12 box-border m-0 p-0 opacity-0 bg-secondary text-primary text-3xl rounded-full fixed right-0 bottom-0 transition-opacity duration-500 flex justify-center items-center",
+        {
+          "cursor-pointer opacity-100": isVisible,
+          "": !isVisible,
+        }
+      )}
     >
       <FaArrowUp />
     </div>

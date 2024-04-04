@@ -11,6 +11,7 @@ import {
   Contact,
   ScrollToTop,
 } from "../components/components";
+import { CustomText } from "../components/general/CustomText";
 ---
 
 <Layout title="Welcome to softLauncher.">
@@ -20,6 +21,7 @@ import {
   <Portfolio />
   <Team />
   <Testimonials />
+  <CustomText>Hola Mundo!</CustomText>
   <Contact />
-  <ScrollToTop />
+  <ScrollToTop client:load />
 </Layout>
