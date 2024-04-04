@@ -5,3 +5,4 @@ export { default as Home } from "./sections/Home";
 export { default as Portfolio } from "./sections/Portfolio";
 export { default as Team } from "./sections/Team";
 export { default as Testimonials } from "./sections/Testimonials";
+export { default as ScrollToTop } from "./general/ScrollToTop";
