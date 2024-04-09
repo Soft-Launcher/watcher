@@ -1,0 +1,23 @@
+---
+import {Image} from 'astro:assets';
+import rocketShip from '../../assets/images/rocket.png';
+import {CustomText} from '../general/CustomText';
+---
+
+<section
+    id="home"
+    class="h-screen bg-secondary flex items-center justify-between"
+>
+    <div class="flex flex-col gap-y-2 basis-5/12 ml-14">
+        <CustomText className="text-primary text-5xl font-bold" variant="title"
+            >Diseñamos y desarrollamos tu idea.</CustomText
+        >
+        <CustomText className="text-white"
+            >Todas las ideas que se nos propongan las llevamos a digital y si no
+            te hacemos una hacemos devolución de tu dinero.</CustomText
+        >
+    </div>
+    <div class="basis-7/12 flex justify-center">
+        <Image class="w-10/12 mt-24" src={rocketShip} alt={'rocket ship'} />
+    </div>
+</section>
