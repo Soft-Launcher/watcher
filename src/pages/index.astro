@@ -1,26 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import {
-  Navigation,
-  Home,
-  About,
-  Portfolio,
-  Team,
-  Testimonials,
-  Contact,
-  ScrollToTop,
-} from "../components/components";
-import { CustomText } from "../components/general/CustomText";
+    Navigation,
+    Home,
+    About,
+    Portfolio,
+    Team,
+    Testimonials,
+    Contact,
+    ScrollToTop,
+} from '../components/components';
+import {CustomText} from '../components/general/CustomText';
+import SwiperComponent from '../components/general/Swiper';
 ---
 
 <Layout title="Welcome to softLauncher.">
-  <Navigation client:load />
-  <Home />
-  <About />
-  <Portfolio />
-  <Team />
-  <Testimonials />
-  <CustomText>Hola Mundo!</CustomText>
-  <Contact />
-  <ScrollToTop client:load />
+    <Navigation client:load />
+    <Home />
+    <About />
+    <Portfolio client:load />
+    <Team />
+    <Testimonials />
+    <CustomText>Hola Mundo!</CustomText>
+    <Contact />
+    <ScrollToTop client:load />
 </Layout>
