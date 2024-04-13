@@ -4,20 +4,61 @@ import rocketShip from '../../assets/images/rocket.png';
 import {CustomText} from '../general/CustomText';
 ---
 
-<section
+<!-- <section
     id="home"
     class="h-screen bg-secondary flex items-center justify-between"
 >
-    <div class="flex flex-col gap-y-2 basis-5/12 ml-14">
-        <CustomText className="text-primary text-5xl font-bold" variant="title"
+    <div class="flex flex-col gap-y-4 basis-5/12 ml-14">
+        <CustomText className="text-primary text-8xl font-bold" variant="title"
             >Diseñamos y desarrollamos tu idea.</CustomText
         >
-        <CustomText className="text-white"
-            >Todas las ideas que se nos propongan las llevamos a digital y si no
-            te hacemos una hacemos devolución de tu dinero.</CustomText
+        <CustomText className="text-white text-2xl font-bold"
+            >Una propuesta para lanzar tu negocio a la era digital.</CustomText
         >
     </div>
     <div class="basis-7/12 flex justify-center">
         <Image class="w-10/12 mt-24" src={rocketShip} alt={'rocket ship'} />
+    </div>
+</section> --><!-- <section
+    id="home"
+    class="h-screen bg-gray-400 px-4 flex flex-col justify-center"
+>
+    <div class="flex flex-col gap-y-2 bg-red-500">
+        <CustomText className="text-primary text-4xl font-bold" variant="title"
+            >Diseñamos y desarrollamos tu idea.</CustomText
+        >
+        <CustomText className="text-white"
+            >Una propuesta para lanzar tu negocio a la era digital.</CustomText
+        >
+    </div>
+
+    <div>
+        <Image src={rocketShip} alt={'rocket ship'} />
+    </div>
+</section> -->
+<section class="h-screen pt-20 bg-secondary">
+    <!-- 
+<section
+    class="h-screen pt-20 bg-secondary sm:bg-yellow-700 md:bg-teal-500 lg:bg-orange-700 xl:bg-slate-500 2xl:bg-lime-800"
+> -->
+
+    <div
+        class="h-full flex flex-col sm:flex-row justify-center sm:items-center px-6"
+    >
+        <div class="flex flex-col gap-y-2 sm:basis-7/12 md:basis-5/12">
+            <CustomText
+                className="text-primary text-4xl lg:text-5xl xl:text-6xl font-bold"
+                variant="title">Diseñamos y desarrollamos tu idea.</CustomText
+            >
+            <CustomText className="text-white lg:text-2xl"
+                >Una propuesta para lanzar tu negocio a la era digital.</CustomText
+            >
+        </div>
+
+        <div
+            class="sm:h-full sm:flex sm:items-center xl:justify-center sm:basis-5/12 md:basis-7/12"
+        >
+            <Image class="max-h-full" src={rocketShip} alt={'rocket ship'} />
+        </div>
     </div>
 </section>
