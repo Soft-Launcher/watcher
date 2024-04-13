@@ -10,7 +10,7 @@ import 'swiper/css/navigation';
 
 // import required modules
 import {Keyboard, Pagination, Navigation} from 'swiper/modules';
-import CustomButton from '../general/CustomButton';
+// import CustomButton from '../general/CustomButton';
 import BoxCompoent from '../general/BoxCompoent';
 import calculateMonthsElapsed from '../../helpers/getMonths';
 const Portfolio = () => {
