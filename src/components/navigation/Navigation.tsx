@@ -58,12 +58,23 @@ const Navigation = () => {
                                 active={activeRoute}
                             />
                             <MenuItems
+                                onclick={() => scrollTo('testimonials')}
+                                title="TESTIMONIOS"
+                                active={activeRoute}
+                            />
+                            <MenuItems
                                 onclick={() => scrollTo('contact')}
                                 title="CONTACTO"
                                 active={activeRoute}
                             />
                         </ul>
-                        <CustomButton title="INICIAR SESION" />
+                        <CustomButton
+                            type="button"
+                            title="INICIAR SESION"
+                            onClick={() => {
+                                console.log('INICIA SESION');
+                            }}
+                        />
                     </div>
                 </nav>
             </section>
