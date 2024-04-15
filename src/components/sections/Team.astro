@@ -1,0 +1,12 @@
+---
+import {Image} from 'astro:assets';
+import character from '../../assets/images/character.png';
+import {CustomText} from '../general/CustomText';
+---
+
+<section id="team" class="h-screen bg-blue-300 flex flex-col">
+    <CustomText>Equipo de trabajo</CustomText>
+    <div class="h-full bg-red-300">
+        <Image class="h-full" alt={'character'} src={character} />
+    </div>
+</section>
