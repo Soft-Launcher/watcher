@@ -2,11 +2,37 @@
 import {Image} from 'astro:assets';
 import character from '../../assets/images/character.png';
 import {CustomText} from '../general/CustomText';
+import {ButtonSwiper} from './ButtonSwiper';
 ---
 
-<section id="team" class="h-screen bg-blue-300 flex flex-col">
-    <CustomText>Equipo de trabajo</CustomText>
-    <div class="h-full bg-red-300">
-        <Image class="h-full" alt={'character'} src={character} />
+<!-- 
+    <CustomText>Equipo de Trabajo</CustomText>
+    <Image class="h-full" alt={'character'} src={character} />
+</section> --><!-- <script>
+
+</script> -->
+<section
+    id="team"
+    class="min-h-screen gap-y-6 flex flex-col px-6 py-4 items-center bg-blue-500 sm:bg-yellow-700 md:bg-teal-500 lg:bg-orange-700 xl:bg-slate-500 2xl:bg-lime-800"
+>
+    <div class="flex flex-col items-center">
+        <CustomText variant="title" className="text-primaryContainer text-2xl">
+            Equipo de Trabajo
+        </CustomText>
+        <CustomText className="text-center"
+            >Un equipo de profesionales, preparado para asumir el mas grande de
+            los retos.</CustomText
+        >
+    </div>
+
+    <div class="flex flex-col items-center gap-y-4">
+        <div class="flex flex-col items-center gap-y-2">
+            <div class="h-full">
+                <Image src={character} class="h-full max-w-full" alt="" />
+            </div>
+            <CustomText>Alexander Véliz</CustomText>
+            <CustomText>Description</CustomText>
+        </div>
+        <ButtonSwiper />
     </div>
 </section>
