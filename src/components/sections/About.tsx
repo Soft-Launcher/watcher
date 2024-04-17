@@ -3,17 +3,17 @@ const About = () => {
         <>
             <section
                 id="about"
-                className="max-h-screen flex justify-center mb-20 pt-10"
+                className="min-h-screen md:max-h-screen mb-20 md:mb-0 mt-20 md:mt-0 flex md:items-center justify-center"
             >
-                <div className="w-10/12  grid grid-cols-2 grid-rows-2 gap-4 h-full bg-[#A3F3BE] rounded-lg">
-                    <div className=" row-span-2 flex justify-center items-center">
+                <div className="w-10/12  md:grid flex flex-col md:grid-cols-2 md:grid-rows-2 gap-4 h-full bg-[#A3F3BE] rounded-lg">
+                    <div className=" md:row-span-2 flex justify-center items-center">
                         <img
-                            className="h-4/5"
+                            className="md:h-4/5"
                             src="../../../public/assets/Portfolio/Business-mission-pana-1.png"
                             alt=""
                         />
                     </div>
-                    <div className="pt-5 pr-10">
+                    <div className="md:pt-5 md:pr-10 px-10 pb-10">
                         <h1 className="pb-5 font-titleMedium text-4xl font-bold text-primaryContainer">
                             Misión
                         </h1>
@@ -26,7 +26,7 @@ const About = () => {
                             intuitivas, adaptadas a cada proyecto.
                         </p>
                     </div>
-                    <div className="pr-10">
+                    <div className="md:pr-10 px-10 pb-10">
                         <h1 className="pb-5 font-titleMedium text-4xl font-bold text-primaryContainer">
                             Visión
                         </h1>
