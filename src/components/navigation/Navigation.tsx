@@ -10,7 +10,7 @@ const Navigation = () => {
             const navigationHeight =
                 document.getElementById('navigation')?.offsetHeight;
             window.scrollTo({
-                top: element.offsetTop - (navigationHeight || 0),
+                top: element.offsetTop,
                 behavior: 'smooth', // Desplazamiento suave
             });
         }
