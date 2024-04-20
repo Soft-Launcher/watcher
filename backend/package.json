@@ -1,0 +1,22 @@
+{
+  "name": "@watcher/backend",
+  "version": "1.0.2",
+  "private": true,
+  "scripts": {
+    "dev": "keystone dev",
+    "start": "keystone start",
+    "build": "keystone build",
+    "postinstall": "keystone build --no-ui --frozen"
+  },
+  "dependencies": {
+    "@keystone-6/auth": "^8.0.0",
+    "@keystone-6/core": "^6.0.0",
+    "@keystone-6/fields-document": "^9.0.0",
+    "@prisma/client": "^5.12.1",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "prisma": "^5.12.1"
+  },
+  "main": "main.ts"
+}
