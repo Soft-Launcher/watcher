@@ -20,3 +20,16 @@ model User {
   isAdmin      Boolean @default(false)
   isSuperAdmin Boolean @default(false)
 }
+
+model Category {
+  id       String    @id @default(cuid())
+  name     String    @unique @default("")
+  projects Project[] @relation("Category_projects")
+}
+
+model Project {
+  id         String     @id @default(cuid())
+  name       String     @default("")
+  caption    String     @default("")
+  categories Category[] @relation("Category_projects")
+}

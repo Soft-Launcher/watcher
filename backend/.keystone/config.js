@@ -23,20 +23,51 @@ __export(keystone_exports, {
   default: () => keystone_default
 });
 module.exports = __toCommonJS(keystone_exports);
+var import_core4 = require("@keystone-6/core");
+
+// src/portfolio/categories/category.keystone-schema.ts
+var import_core = require("@keystone-6/core");
+var import_access = require("@keystone-6/core/access");
+var import_fields = require("@keystone-6/core/fields");
+var categoryKeystoneSchema = (0, import_core.list)({
+  access: import_access.allowAll,
+  fields: {
+    name: (0, import_fields.text)({ isIndexed: "unique" }),
+    projects: (0, import_fields.relationship)({ ref: "Project.categories", many: true })
+  }
+});
+
+// src/portfolio/projects/project.keystone-schema.ts
 var import_core2 = require("@keystone-6/core");
+var import_access2 = require("@keystone-6/core/access");
+var import_fields2 = require("@keystone-6/core/fields");
+var projectKeystoneSchema = (0, import_core2.list)({
+  access: import_access2.allowAll,
+  fields: {
+    name: (0, import_fields2.text)(),
+    caption: (0, import_fields2.text)(),
+    categories: (0, import_fields2.relationship)({ ref: "Category.projects", many: true })
+  }
+});
+
+// src/portfolio/portfolio.keystone-lists.ts
+var portfolioKeystoneLists = {
+  Category: categoryKeystoneSchema,
+  Project: projectKeystoneSchema
+};
 
 // src/users/user.schema.ts
-var import_core = require("@keystone-6/core");
-var import_fields = require("@keystone-6/core/fields");
+var import_core3 = require("@keystone-6/core");
+var import_fields3 = require("@keystone-6/core/fields");
 var isAdmin = ({ session: session2 }) => Boolean(session2?.data.isAdmin);
-var UserSchema = (0, import_core.list)({
+var UserSchema = (0, import_core3.list)({
   fields: {
-    name: (0, import_fields.text)(),
-    surname: (0, import_fields.text)(),
-    email: (0, import_fields.text)({ isIndexed: "unique" }),
-    password: (0, import_fields.password)(),
-    isAdmin: (0, import_fields.checkbox)(),
-    isSuperAdmin: (0, import_fields.checkbox)()
+    name: (0, import_fields3.text)(),
+    surname: (0, import_fields3.text)(),
+    email: (0, import_fields3.text)({ isIndexed: "unique" }),
+    password: (0, import_fields3.password)(),
+    isAdmin: (0, import_fields3.checkbox)(),
+    isSuperAdmin: (0, import_fields3.checkbox)()
   },
   access: {
     operation: {
@@ -49,8 +80,9 @@ var UserSchema = (0, import_core.list)({
 });
 
 // src/keystone/lists.ts
-var lists = {
-  User: UserSchema
+var Lists = {
+  User: UserSchema,
+  ...portfolioKeystoneLists
 };
 
 // src/auth/index.ts
@@ -75,10 +107,10 @@ var session = (0, import_session.statelessSessions)({
 
 // keystone.ts
 var keystone_default = withAuth(
-  (0, import_core2.config)({
+  (0, import_core4.config)({
     db: { provider: "sqlite", url: "file:./keystone.db" },
     session,
-    lists
+    lists: Lists
   })
 );
 //# sourceMappingURL=config.js.map
