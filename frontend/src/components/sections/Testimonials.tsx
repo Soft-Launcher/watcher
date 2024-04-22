@@ -23,10 +23,14 @@ const Testimonials = () => {
                         Testimonios y reseñas
                     </h1>
                     <Swiper
-                        slidesPerView={3}
+                        slidesPerView={1}
                         spaceBetween={5}
                         modules={[A11y, Pagination]}
                         className=""
+                        breakpoints={{
+                            900: {slidesPerView: 3},
+                            590: {slidesPerView: 2},
+                        }}
                     >
                         {testimonialsArray.map((testimonial) => (
                             <SwiperSlide>

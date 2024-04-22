@@ -10,7 +10,7 @@ const Navigation = () => {
             const navigationHeight =
                 document.getElementById('navigation')?.offsetHeight;
             window.scrollTo({
-                top: element.offsetTop,
+                top: element.offsetTop - (navigationHeight || 0),
                 behavior: 'smooth', // Desplazamiento suave
             });
         }
@@ -19,8 +19,11 @@ const Navigation = () => {
 
     return (
         <>
-            <section id="navigation" className="w-screen fixed top-0 z-50">
-                <nav className="bg-secondary w-full  h-20 mx-auto flex items-center">
+            <section
+                id="navigation"
+                className="w-screen fixed top-0 z-50 bg-secondary pb-4"
+            >
+                <nav className="w-full h-full mx-auto flex flex-wrap justify-around items-center">
                     <a
                         href="/"
                         className=" flex items-center cursor-pointer mr-12"
@@ -35,39 +38,39 @@ const Navigation = () => {
                             <strong>SOFT LAUNCHER</strong>
                         </span>
                     </a>
-                    <div className="w-full flex justify-end mr-6">
-                        <ul className="flex content-between items-center list-none relative mr-16">
-                            <MenuItems
-                                onclick={() => scrollTo('home')}
-                                title="INICIO"
-                                active={activeRoute}
-                            />
-                            <MenuItems
-                                onclick={() => scrollTo('about')}
-                                title="NOSOTROS"
-                                active={activeRoute}
-                            />
-                            <MenuItems
-                                onclick={() => scrollTo('portfolio')}
-                                title="PORTAFOLIO"
-                                active={activeRoute}
-                            />
-                            <MenuItems
-                                onclick={() => scrollTo('team')}
-                                title="EQUIPO"
-                                active={activeRoute}
-                            />
-                            <MenuItems
-                                onclick={() => scrollTo('testimonials')}
-                                title="TESTIMONIOS"
-                                active={activeRoute}
-                            />
-                            <MenuItems
-                                onclick={() => scrollTo('contact')}
-                                title="CONTACTO"
-                                active={activeRoute}
-                            />
-                        </ul>
+                    <ul className="flex flex-wrap relative">
+                        <MenuItems
+                            onclick={() => scrollTo('home')}
+                            title="INICIO"
+                            active={activeRoute}
+                        />
+                        <MenuItems
+                            onclick={() => scrollTo('about')}
+                            title="NOSOTROS"
+                            active={activeRoute}
+                        />
+                        <MenuItems
+                            onclick={() => scrollTo('portfolio')}
+                            title="PORTAFOLIO"
+                            active={activeRoute}
+                        />
+                        <MenuItems
+                            onclick={() => scrollTo('team')}
+                            title="EQUIPO"
+                            active={activeRoute}
+                        />
+                        <MenuItems
+                            onclick={() => scrollTo('testimonials')}
+                            title="TESTIMONIOS"
+                            active={activeRoute}
+                        />
+                        <MenuItems
+                            onclick={() => scrollTo('contact')}
+                            title="CONTACTO"
+                            active={activeRoute}
+                        />
+                    </ul>
+                    <div className="md:pr-8">
                         <CustomButton
                             type="button"
                             title="INICIAR SESION"
