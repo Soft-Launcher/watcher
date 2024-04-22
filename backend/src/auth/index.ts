@@ -7,6 +7,9 @@ const {withAuth} = createAuth({
     identityField: 'email',
     secretField: 'password',
     sessionData: 'isAdmin isSuperAdmin',
+    initFirstItem: {
+        fields: ['name', 'email', 'password'],
+    },
 });
 
 // Age in seconds
