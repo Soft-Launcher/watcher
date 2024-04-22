@@ -32,4 +32,6 @@ model Project {
   name       String     @default("")
   caption    String     @default("")
   categories Category[] @relation("Category_projects")
+  client     String     @default("")
+  pictureURI String     @default("")
 }

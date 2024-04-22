@@ -25,11 +25,11 @@ __export(keystone_exports, {
 module.exports = __toCommonJS(keystone_exports);
 var import_core4 = require("@keystone-6/core");
 
-// src/portfolio/categories/category.keystone-schema.ts
+// src/portfolio/categories/keystone.category-schema.ts
 var import_core = require("@keystone-6/core");
 var import_access = require("@keystone-6/core/access");
 var import_fields = require("@keystone-6/core/fields");
-var categoryKeystoneSchema = (0, import_core.list)({
+var CategoryKeystoneSchema = (0, import_core.list)({
   access: import_access.allowAll,
   fields: {
     name: (0, import_fields.text)({ isIndexed: "unique" }),
@@ -37,7 +37,7 @@ var categoryKeystoneSchema = (0, import_core.list)({
   }
 });
 
-// src/portfolio/projects/project.keystone-schema.ts
+// src/portfolio/projects/infraestructure/keystone.project-schema.ts
 var import_core2 = require("@keystone-6/core");
 var import_access2 = require("@keystone-6/core/access");
 var import_fields2 = require("@keystone-6/core/fields");
@@ -46,13 +46,15 @@ var projectKeystoneSchema = (0, import_core2.list)({
   fields: {
     name: (0, import_fields2.text)(),
     caption: (0, import_fields2.text)(),
-    categories: (0, import_fields2.relationship)({ ref: "Category.projects", many: true })
+    categories: (0, import_fields2.relationship)({ ref: "Category.projects", many: true }),
+    client: (0, import_fields2.text)(),
+    pictureURI: (0, import_fields2.text)()
   }
 });
 
-// src/portfolio/portfolio.keystone-lists.ts
+// src/portfolio/infraestructure/keystone.portfolio-schema.ts
 var portfolioKeystoneLists = {
-  Category: categoryKeystoneSchema,
+  Category: CategoryKeystoneSchema,
   Project: projectKeystoneSchema
 };
 

@@ -183,6 +183,8 @@ type Project {
   caption: String
   categories(where: CategoryWhereInput! = {}, orderBy: [CategoryOrderByInput!]! = [], take: Int, skip: Int! = 0, cursor: CategoryWhereUniqueInput): [Category!]
   categoriesCount(where: CategoryWhereInput! = {}): Int
+  client: String
+  pictureURI: String
 }
 
 input ProjectWhereUniqueInput {
@@ -197,6 +199,8 @@ input ProjectWhereInput {
   name: StringFilter
   caption: StringFilter
   categories: CategoryManyRelationFilter
+  client: StringFilter
+  pictureURI: StringFilter
 }
 
 input CategoryManyRelationFilter {
@@ -209,12 +213,16 @@ input ProjectOrderByInput {
   id: OrderDirection
   name: OrderDirection
   caption: OrderDirection
+  client: OrderDirection
+  pictureURI: OrderDirection
 }
 
 input ProjectUpdateInput {
   name: String
   caption: String
   categories: CategoryRelateToManyForUpdateInput
+  client: String
+  pictureURI: String
 }
 
 input CategoryRelateToManyForUpdateInput {
@@ -233,6 +241,8 @@ input ProjectCreateInput {
   name: String
   caption: String
   categories: CategoryRelateToManyForCreateInput
+  client: String
+  pictureURI: String
 }
 
 input CategoryRelateToManyForCreateInput {

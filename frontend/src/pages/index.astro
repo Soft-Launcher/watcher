@@ -10,8 +10,10 @@ import {
 } from '../components/components';
 import Home from '../components/sections/Home.astro';
 import Team from '../components/sections/Team.astro';
-import {keystoneContext} from '@watcher/backend';
 
+import {porfolio} from '@watcher/backend';
+
+const projects = await porfolio.project.findAll();
 ---
 
 <Layout title="Welcome to softLauncher.">
@@ -23,4 +25,6 @@ import {keystoneContext} from '@watcher/backend';
     <Testimonials client:load />
     <Contact client:load />
     <ScrollToTop client:load />
+
+    <!-- {projects.map((project) => <p>{project.name}</p>)} -->
 </Layout>
