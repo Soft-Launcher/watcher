@@ -5,6 +5,7 @@ import {ButtonSwiper} from '../sections/ButtonSwiper';
 import {CustomText} from './CustomText';
 
 interface Collaborator {
+    id: string;
     name: string;
     description: string;
     personalPortfolioURI?: string;

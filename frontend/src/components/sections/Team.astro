@@ -1,10 +1,12 @@
 ---
 import {CustomText} from '../general/CustomText';
 import {CollaboratorsSlider} from '../general/CollaboratorsSlider';
-import collaborators from '../../data/collaborators.json';
+import {team} from '@watcher/backend';
+
+const collaborators = await team.collaborator.findAll();
 ---
 
-<section class="min-h-fit pt-20 px-6 flex flex-col gap-y-4" id="team">
+<section class="min-h-screen pt-20 px-6 flex flex-col gap-y-4" id="team">
     <div class="flex flex-col gap-y-2 items-center">
         <CustomText
             className="text-primaryContainer text-3xl text-center font-extrabold"

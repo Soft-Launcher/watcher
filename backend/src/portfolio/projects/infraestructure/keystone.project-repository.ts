@@ -2,6 +2,7 @@ import {keystoneContext} from '../../../keystone/context';
 import {ProjectRepository} from '../project-repository';
 import {ProjectFactory} from '../project-factory';
 import {injectable} from 'tsyringe';
+import {Project} from '../project';
 
 @injectable()
 export class KeystoneProjectRepository implements ProjectRepository {
@@ -15,4 +16,11 @@ export class KeystoneProjectRepository implements ProjectRepository {
         });
         return projects.map((project) => this._projectFactory.make(project));
     }
+}
+
+export class InMemoryProjectRespository implements ProjectRepository {
+    async findAllProjects(): Promise<Project[]> {
+        return this.projects;
+    }
+    private readonly projects: Project[] = [];
 }

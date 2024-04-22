@@ -35,3 +35,11 @@ model Project {
   client     String     @default("")
   pictureURI String     @default("")
 }
+
+model Collaborator {
+  id                   String @id @default(cuid())
+  name                 String @default("")
+  description          String @default("")
+  profilePictureURI    String @default("")
+  personalPortfolioURI String @default("")
+}
