@@ -1,0 +1,24 @@
+---
+import {CustomText} from '../general/CustomText';
+import {CollaboratorsSlider} from '../general/CollaboratorsSlider';
+import {team} from '@watcher/backend';
+
+// const collaborators = await team.collaborator.findAll();
+const collaborators = [];
+---
+
+<section class="min-h-screen pt-20 px-6 flex flex-col gap-y-4" id="team">
+    <div class="flex flex-col gap-y-2 items-center">
+        <CustomText
+            className="text-primaryContainer text-3xl text-center font-extrabold"
+            variant="title">Equipo de trabajo</CustomText
+        >
+        <CustomText className="text-center">
+            Un equipo de profesionales compromentidos con la entrega de
+            productos con los más altos estándares de calidad.
+        </CustomText>
+    </div>
+    <div class="flex-1">
+        <CollaboratorsSlider collaborators={collaborators} client:load />
+    </div>
+</section>

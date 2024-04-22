@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import {
+    Navigation,
+    About,
+    Portfolio,
+    Testimonials,
+    Contact,
+    ScrollToTop,
+} from '../components/components';
+import Home from '../components/sections/Home.astro';
+import Team from '../components/sections/Team.astro';
+---
+
+<Layout title="Welcome to softLauncher.">
+    <Navigation client:load />
+    <Home />
+    <About />
+    <Portfolio client:load />
+    <Team />
+    <Testimonials client:load />
+    <Contact client:load />
+    <ScrollToTop client:load />
+</Layout>
