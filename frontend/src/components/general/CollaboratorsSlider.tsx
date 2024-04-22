@@ -18,7 +18,8 @@ interface Props {
 export const CollaboratorsSlider = ({collaborators}: Props) => {
     return (
         <Swiper
-            className="bg-blue-300 h-full"
+            className="h-full"
+            spaceBetween={5}
             centeredSlides={true}
             slidesPerView={1}
             grabCursor={true}
@@ -33,8 +34,8 @@ export const CollaboratorsSlider = ({collaborators}: Props) => {
             }}
         >
             {collaborators.map((collaborator) => (
-                <SwiperSlide className="bg-yellow-100 mb-2">
-                    <div className="bg-orange-500 h-full flex flex-col items-center gap-y-1">
+                <SwiperSlide className="mb-2">
+                    <div className="h-full flex flex-col items-center gap-y-1">
                         <img src={collaborator.profilePictureURI} />
                         <CustomText
                             variant="subtitle"
