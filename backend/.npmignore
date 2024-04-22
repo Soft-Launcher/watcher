@@ -1,0 +1,3 @@
+# When using pnpm deploy all the files and directories of the
+# project gets copied, but the ones that are .gitignore'd
+# by setting this empty file we ensure that all the files are being copied
