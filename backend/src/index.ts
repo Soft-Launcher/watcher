@@ -11,9 +11,6 @@ export const porfolio = {
         const projectRepository = new KeystoneProjectRepository(projectFactory);
         const projectService = new ProjectService(projectRepository);
 
-        console.log('PREVIO');
-        projectService.doing();
-
         return {findAll: () => projectService.findAllProjects()};
     })(),
 };
