@@ -7,8 +7,6 @@
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,
-        "outDir": "./dist",
-        "rootDir": "./src"
+        "emitDecoratorMetadata": true
     }
 }
