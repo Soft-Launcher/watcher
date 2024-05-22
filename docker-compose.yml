@@ -1,0 +1,44 @@
+networks:
+    watcher_network:
+
+services:
+    watcher_cloudflared:
+        image: cloudflare/cloudflared
+        container_name: cloudflared-tunnel
+        restart: unless-stopped
+        command: tunnel run
+        environment:
+            - TUNNEL_TOKEN=${CLOUDFLARED_TUNNEL_TOKEN:?err}
+        networks:
+            - watcher_network
+
+    watcher_tinyproxy:
+        build:
+            context: ./docker/tinyproxy
+        image: watcher-tinyproxy
+        container_name: watcher-tinyproxy
+        restart: unless-stopped
+        ports:
+            - '8888:8888'
+        networks:
+            - watcher_network
+
+    watcher_backend:
+        build:
+            dockerfile: ./Dockerfile
+            target: backend
+        image: watcher-backend
+        container_name: watcher-backend
+        restart: unless-stopped
+        networks:
+            - watcher_network
+
+    watcher_frontend:
+        build:
+            dockerfile: ./Dockerfile
+            target: frontend
+        image: watcher-frontend
+        container_name: watcher-frontend
+        restart: unless-stopped
+        networks:
+            - watcher_network

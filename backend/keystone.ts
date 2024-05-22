@@ -7,5 +7,16 @@ export default withAuth(
         db: {provider: 'sqlite', url: 'file:./keystone.db'},
         session,
         lists: Lists,
+        // server: {
+        //     port: Number(process.env.PORT) ?? 3000,
+        // },
+        ui: {
+            basePath: '/admin',
+            isAccessAllowed: () => true,
+        },
+        graphql: {
+            path: '/admin/api/graphql',
+        },
+        telemetry: false,
     }),
 );

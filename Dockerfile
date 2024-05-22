@@ -1,4 +1,6 @@
-# #Declaring base container
+# # Docker file tailored for a pnpm monorepo, reference: https://pnpm.io/docker
+
+# ##Declaring base container
 FROM node:20-slim AS base
 # Required for prisma
 RUN apt-get update -y && apt-get install -y openssl 
@@ -7,7 +9,7 @@ ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
 
-# #Build phase
+# ##Build phase
 FROM base AS build
 COPY . /usr/src/app
 WORKDIR /usr/src/app
