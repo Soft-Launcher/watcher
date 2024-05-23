@@ -4,7 +4,10 @@ import {withAuth, session} from './src/auth';
 
 export default withAuth(
     config({
-        db: {provider: 'sqlite', url: 'file:./keystone.db'},
+        db: {
+            provider: 'postgresql',
+            url: process.env.POSTGRES_URL ?? '',
+        },
         session,
         lists: Lists,
         // server: {
