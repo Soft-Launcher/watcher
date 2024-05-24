@@ -22,12 +22,10 @@ FROM base AS backend
 COPY --from=build /prod/backend /prod/backend
 WORKDIR /prod/backend
 EXPOSE 3000
-CMD ["sh", "-c", "if [ -z \"$POSTGRES_URL\" ]; then echo 'FOO is not set'; exit 1; fi && pnpm start"]
+CMD ["pnpm", "start"]
 
 FROM base AS frontend
 COPY --from=build /prod/frontend /prod/frontend
 WORKDIR /prod/frontend
-ENV HOST=0.0.0.0
-ENV PORT=4321
 EXPOSE 4321
 CMD [ "node", "./dist/server/entry.mjs" ]
