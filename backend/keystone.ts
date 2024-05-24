@@ -6,19 +6,18 @@ export default withAuth(
     config({
         db: {
             provider: 'postgresql',
-            url: process.env.POSTGRES_URL ?? '',
+            url: process.env.POSTGRES_URL || '',
         },
         session,
         lists: Lists,
-        // server: {
-        //     port: Number(process.env.PORT) ?? 3000,
-        // },
+        server: {
+            port: Number(process.env.PORT) || 3000,
+        },
         ui: {
-            basePath: '/admin',
-            isAccessAllowed: () => true,
+            basePath: process.env.BASE_PATH,
         },
         graphql: {
-            path: '/admin/api/graphql',
+            path: `${process.env.BASE_PATH || ''}/api/graphql`,
         },
         telemetry: false,
     }),

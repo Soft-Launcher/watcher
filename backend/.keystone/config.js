@@ -133,9 +133,22 @@ var session = (0, import_session.statelessSessions)({
 // keystone.ts
 var keystone_default = withAuth(
   (0, import_core5.config)({
-    db: { provider: "sqlite", url: "file:./keystone.db" },
+    db: {
+      provider: "postgresql",
+      url: process.env.POSTGRES_URL || ""
+    },
     session,
-    lists: Lists
+    lists: Lists,
+    server: {
+      port: Number(process.env.PORT) || 3e3
+    },
+    ui: {
+      basePath: process.env.BASE_PATH
+    },
+    graphql: {
+      path: `${process.env.BASE_PATH || ""}/api/graphql`
+    },
+    telemetry: false
   })
 );
 //# sourceMappingURL=config.js.map

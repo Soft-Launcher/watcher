@@ -3,7 +3,7 @@
     "version": "1.0.2",
     "private": true,
     "scripts": {
-        "dev": "keystone dev",
+        "dev": "dotenv -- keystone dev",
         "start": "keystone start",
         "build": "keystone build",
         "postinstall": "keystone build --no-ui --frozen",
@@ -20,6 +20,7 @@
         "valibot": "^0.30.0"
     },
     "devDependencies": {
+        "dotenv-cli": "^7.4.2",
         "prisma": "^5.12.1"
     },
     "main": "src/index.ts"
