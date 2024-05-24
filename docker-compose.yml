@@ -22,6 +22,8 @@ services:
             - '8888:8888'
         environment:
             - BACKEND_BASE_PATH=${BACKEND_BASE_PATH:?err}
+            - BACKEND_PORT=${BACKEND_PORT:?err}
+            - FRONTEND_PORT=${FRONTEND_PORT:?err}
         networks:
             - watcher_network
 
