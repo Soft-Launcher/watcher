@@ -49,6 +49,6 @@ services:
         container_name: watcher-frontend
         restart: unless-stopped
         environment:
-            - POSTGRES_URL=${POSTGRES_URL:?err}
+            - DATABASE_URL=${POSTGRES_URL:?err}
         networks:
             - watcher_network
