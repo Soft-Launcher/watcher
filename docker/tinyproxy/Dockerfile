@@ -1,9 +1,8 @@
 FROM docker.io/kalaksi/tinyproxy
 
-USER root
-RUN apk add envsubst
+ARG ROOT_PWD
+RUN apk add --no-cache envsubst
 
-USER ${TINYPROXY_UID}:${TINYPROXY_GID}
 COPY ./tinyproxy.conf /etc/tinyproxy/tinyproxy.conf.template
 EXPOSE 8888
 
