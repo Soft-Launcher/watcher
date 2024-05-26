@@ -1,6 +1,5 @@
 FROM docker.io/kalaksi/tinyproxy
 
-ARG ROOT_PWD
 RUN apk add --no-cache envsubst
 
 COPY ./tinyproxy.conf /etc/tinyproxy/tinyproxy.conf.template

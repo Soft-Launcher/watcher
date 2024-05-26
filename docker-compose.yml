@@ -12,11 +12,11 @@ services:
         networks:
             - watcher_network
 
-    watcher_tinyproxy:
+    watcher_nginx:
         build:
-            context: ./docker/tinyproxy
-        image: watcher-tinyproxy
-        container_name: watcher-tinyproxy
+            context: ./docker/nginx
+        image: watcher-nginx
+        container_name: watcher-nginx
         restart: unless-stopped
         ports:
             - '8888:8888'
@@ -49,7 +49,5 @@ services:
         image: watcher-frontend
         container_name: watcher-frontend
         restart: unless-stopped
-        ports:
-            - '4321:4321'
         networks:
             - watcher_network
