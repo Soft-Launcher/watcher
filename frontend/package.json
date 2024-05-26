@@ -15,7 +15,6 @@
         "@astrojs/react": "^3.1.1",
         "@astrojs/tailwind": "^5.1.0",
         "@builder.io/qwik": "^1.5.1",
-        "@prisma/client": "^5.12.1",
         "@qwikdev/astro": "^0.5.14",
         "@types/react": "^18.2.74",
         "astro": "^4.5.14",

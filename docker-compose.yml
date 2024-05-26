@@ -37,7 +37,8 @@ services:
         environment:
             - PORT=${BACKEND_PORT:?err}
             - BASE_PATH=${BACKEND_BASE_PATH:?err}
-            - POSTGRES_URL=${POSTGRES_URL:?err}
+            - DATABASE_URI=${DATABASE_URI:?err}
+            - PAYLOAD_SECRET=${PAYLOAD_SECRET:?err}
         networks:
             - watcher_network
 
@@ -48,7 +49,7 @@ services:
         image: watcher-frontend
         container_name: watcher-frontend
         restart: unless-stopped
-        environment:
-            - DATABASE_URL=${POSTGRES_URL:?err}
+        ports:
+            - '4321:4321'
         networks:
             - watcher_network
