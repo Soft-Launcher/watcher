@@ -34,6 +34,8 @@ services:
         image: watcher-backend
         container_name: watcher-backend
         restart: unless-stopped
+        ports:
+            - '3000:3000'
         environment:
             - PORT=${BACKEND_PORT:?err}
             - BASE_PATH=${BACKEND_BASE_PATH:?err}
@@ -49,5 +51,7 @@ services:
         image: watcher-frontend
         container_name: watcher-frontend
         restart: unless-stopped
+        ports:
+            - '4321:4321'
         networks:
             - watcher_network
