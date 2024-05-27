@@ -27,11 +27,4 @@ export default buildConfig({
             connectionString: process.env.DATABASE_URI,
         },
     }),
-    routes: {
-        admin: '/admin',
-        api: `${'/payload'}/api`,
-        graphQL: `${'/payload'}/graphql`,
-        graphQLPlayground: `${'/payload'}/graphql-playground`,
-    },
-    // serverURL: 'http://localhost:3000',
 });
