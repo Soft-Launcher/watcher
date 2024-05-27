@@ -21,7 +21,8 @@ services:
         ports:
             - '8888:8888'
         environment:
-            - BACKEND_BASE_PATH=${BACKEND_BASE_PATH:?err}
+            - BACKEND_ADMIN_UI_BASE_PATH=${BACKEND_ADMIN_UI_BASE_PATH:?err}
+            - BACKEND_API_BASE_PATH=${BACKEND_API_BASE_PATH:?err}
             - BACKEND_PORT=${BACKEND_PORT:?err}
             - FRONTEND_PORT=${FRONTEND_PORT:?err}
         networks:
@@ -38,7 +39,8 @@ services:
             - '3000:3000'
         environment:
             - PORT=${BACKEND_PORT:?err}
-            - BASE_PATH=${BACKEND_BASE_PATH:?err}
+            - ADMIN_UI_BASE_PATH=${BACKEND_ADMIN_UI_BASE_PATH:?err}
+            - API_BASE_PATH=${BACKEND_API_BASE_PATH:?err}
             - DATABASE_URI=${DATABASE_URI:?err}
             - PAYLOAD_SECRET=${PAYLOAD_SECRET:?err}
         networks:

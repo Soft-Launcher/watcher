@@ -5,7 +5,7 @@ const app = express();
 
 // Redirect root to Admin panel
 app.get('/', (_, res) => {
-    res.redirect(process.env.ADMIN_UI_BASE_PATH || '/admin');
+    res.redirect('/admin');
 });
 
 const start = async () => {
