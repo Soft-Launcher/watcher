@@ -1,8 +1,8 @@
 networks:
     watcher_network:
     default:
-        external:
-            name: bridge
+        external: true
+        name: bridge
 
 services:
     # watcher_nginx:
