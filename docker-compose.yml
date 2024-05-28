@@ -1,10 +1,13 @@
 networks:
     watcher_network:
-    default:
-        external: true
-        name: bridge
 
 services:
+    # from: https://github.com/docker/compose/issues/3012
+    connect-bridge:
+        image: docker:stable
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock:ro
+        command: /bin/sh -c "docker ps -f label=networks=bridge -q | xargs -I'{}' docker network connect bridge {}"
     # watcher_nginx:
     #     build:
     #         context: ./docker/nginx
@@ -48,4 +51,3 @@ services:
         restart: unless-stopped
         networks:
             - watcher_network
-            - default
