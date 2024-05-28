@@ -1,6 +1,8 @@
 networks:
     watcher_network:
-    bridge:
+    default:
+        external:
+            name: bridge
 
 services:
     # watcher_nginx:
@@ -46,4 +48,4 @@ services:
         restart: unless-stopped
         networks:
             - watcher_network
-            - bridge
+            - default
