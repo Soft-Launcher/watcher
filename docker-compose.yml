@@ -1,5 +1,6 @@
 networks:
     watcher_network:
+    bridge:
 
 services:
     # watcher_nginx:
