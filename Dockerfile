@@ -17,12 +17,10 @@ RUN pnpm deploy --filter=@watcher/backend --prod /prod/backend
 RUN pnpm deploy --filter=@watcher/frontend --prod /prod/frontend
 
 FROM base AS backend
-ENV NODE_ENV=production
-ENV PAYLOAD_CONFIG_PATH=dist/payload.config.js
 COPY --from=build /prod/backend /prod/backend
 WORKDIR /prod/backend
 EXPOSE 3000
-CMD ["node", "dist/server.js"]
+CMD ["pnpm", "serve"]
 
 FROM base AS frontend
 COPY --from=build /prod/frontend /prod/frontend
