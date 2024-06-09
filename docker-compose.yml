@@ -2,16 +2,20 @@ networks:
     watcher_network:
 
 services:
-    watcher_nginx:
+    watcher_tinyproxy:
         build:
-            context: ./docker/nginx
-        image: watcher-nginx
-        container_name: watcher-nginx
+            context: ./docker/tinyproxy
+        image: watcher-tinyproxy
+        container_name: watcher-tinyproxy
         restart: unless-stopped
+        ports:
+            - 8888:8888
         environment:
             - BACKEND_BASE_PATH=${BACKEND_BASE_PATH:?err}
             - BACKEND_PORT=${BACKEND_PORT:?err}
             - FRONTEND_PORT=${FRONTEND_PORT:?err}
+            - PORT=${PROXY_PORT:?err}
+            - BASE_URL=${BASE_URL:?err}
         networks:
             - watcher_network
 
